@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinalPrimerParcial.CalculadoraIMC"
+             Title="Calculadora IMC" BackgroundColor="#0F172A">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+
+            <Label Text=" CALCULADORA IMC " FontSize="24" FontAttributes="Bold" TextColor="#38BDF8" HorizontalOptions="Center"/>
+
+            <!-- 1. Campo para ingresar el peso en kilogramos -->
+            <Label Text="Peso (Kg)" TextColor="#94A3B8" FontAttributes="Bold"/>
+            <Border Stroke="#334155" StrokeShape="RoundRectangle 8" BackgroundColor="#1E293B" Padding="5,0">
+                <Entry x:Name="txtPeso" Placeholder="Ejemplo: 70.5" PlaceholderColor="#64748B" TextColor="#F8FAFC" Keyboard="Numeric"/>
+            </Border>
+
+            <!-- 2. Campo para ingresar la altura en metros -->
+            <Label Text="Altura (metros)" TextColor="#94A3B8" FontAttributes="Bold"/>
+            <Border Stroke="#334155" StrokeShape="RoundRectangle 8" BackgroundColor="#1E293B" Padding="5,0">
+                <Entry x:Name="txtAltura" Placeholder="Ejemplo: 1.74" PlaceholderColor="#64748B" TextColor="#F8FAFC" Keyboard="Numeric"/>
+            </Border>
+
+            <!-- 3. Botón que activa el método de cálculo en C# -->
+            <Button Text="Calcular" BackgroundColor="#38BDF8" TextColor="#0F172A" FontAttributes="Bold" CornerRadius="8" HeightRequest="50" Clicked="Button_Clicked"/>
+            <Button Text="Limpiar" BackgroundColor="#334155" TextColor="#F8FAFC" FontAttributes="Bold" CornerRadius="8" HeightRequest="50" Clicked="OnLimpiarClicked"/>
+
+            <!-- 4. Tarjeta contenedor de resultados (oculta por defecto hasta calcular) -->
+            <Border x:Name="brResultado" Stroke="#334155" StrokeShape="RoundRectangle 12" BackgroundColor="#1E293B" Padding="20" IsVisible="False" Margin="0,10,0,0">
+                <VerticalStackLayout>
+                    <Label x:Name="lblValorIMC" FontSize="32" FontAttributes="Bold" TextColor="#38BDF8" HorizontalOptions="Center"/>
+                    <Label x:Name="lblDiagnostico" FontSize="16" FontAttributes="Bold" TextColor="#F8FAFC" HorizontalOptions="Center"/>
+                    <Label x:Name="lblRangosExplicacion" FontSize="12" TextColor="#94A3B8" HorizontalOptions="Center" HorizontalTextAlignment="Start" Margin="0,5,0,0"/>
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

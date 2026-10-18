@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinalPrimerParcial.ConversorMoneda"
+             Title="Conversor de Monedas" BackgroundColor="#0F172A">
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="15" VerticalOptions="Center">
+
+            <Label Text="Conversor de Monedas" FontSize="26" FontAttributes="Bold" TextColor="#F8FAFC" HorizontalOptions="Center"/>
+
+            <!-- Campo para ingresar el monto numérico -->
+            <Entry x:Name="txtMonto" FontSize="16" Placeholder="Monto a convertir" PlaceholderColor="#64748B" TextColor="#F8FAFC" BackgroundColor="#1E293B" Keyboard="Numeric"/>
+
+            <!-- Seleccionador de moneda de origen -->
+            <Label Text="Moneda Origen" TextColor="#94A3B8" FontSize="14" FontAttributes="Bold"/>
+            <Picker x:Name="pckOrigen" Title="Seleccione origen" TitleColor="#64748B" TextColor="#F8FAFC" BackgroundColor="#1E293B">
+                <Picker.Items>
+                    <x:String>HNL (Lempira)</x:String>
+                    <x:String>USD (Dolares)</x:String>
+                    <x:String>EUR (Euros)</x:String>
+                    <x:String>MXN (Peso Mexicano)</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <!-- Seleccionador de moneda de destino -->
+            <Label Text="Moneda Destino" TextColor="#94A3B8" FontSize="14" FontAttributes="Bold"/>
+            <Picker x:Name="pckDestino" Title="Seleccione destino" TitleColor="#64748B" TextColor="#F8FAFC" BackgroundColor="#1E293B">
+                <Picker.Items>
+                    <x:String>HNL (Lempira)</x:String>
+                    <x:String>USD (Dolares)</x:String>
+                    <x:String>EUR (Euros)</x:String>
+                    <x:String>MXN (Peso Mexicano)</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <!-- Botones de acción -->
+            <Button Text="Convertir" Clicked="OnConvertirClicked" BackgroundColor="#38BDF8" TextColor="#0F172A" FontAttributes="Bold" CornerRadius="8" HeightRequest="50"/>
+            <Button Text="Limpiar" Clicked="OnLimpiarClicked" BackgroundColor="#334155" TextColor="#F8FAFC" FontAttributes="Bold" CornerRadius="8" HeightRequest="50"/>
+
+            <!-- Etiqueta para desplegar el resultado -->
+            <Label x:Name="lblResultado" FontSize="22" FontAttributes="Bold" TextColor="#38BDF8" HorizontalOptions="Center" Margin="0,15,0,0"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
